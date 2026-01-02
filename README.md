@@ -3,166 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HM Gooo Official | Biografía</title>
+    <title>HM Gooo Official</title>
+    <meta name="description" content="Fan Account dedicado a Hatsune Miku 🩵 Edits, memes y contenido Vocaloid">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset básico y fondo futurista */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Orbitron', sans-serif;
-            background: #0f0f1a;
-            color: #e0e0e0;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
+        :root {
+            --bg: #0a0e17;
+            --card: rgba(15, 20, 35, 0.6);
+            --cyan: #00ffff;
+            --turquesa: #00cccc;
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
         }
-
-        /* Partículas de fondo */
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Fondo de partículas */
         #particles {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
         }
-
-        /* Header hero */
-        header {
-            height: 100vh;
+        
+        /* Sección Hero */
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 200, 200, 0.05));
             position: relative;
         }
-
-        .profile-img {
-            width: 280px; /* Un poco más grande para que destaque */
-            height: 280px;
+        
+        .hero-img {
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
-            border: 6px solid cyan;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
-            animation: glow 4s infinite alternate;
-            margin-bottom: 2.5rem;
-            object-fit: cover; /* Por si la imagen no es perfectamente cuadrada */
+            border: 6px solid var(--cyan);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+            animation: glow 5s ease-in-out infinite alternate;
+            margin-bottom: 2rem;
         }
-
-        h1 {
-            font-size: 4.5rem;
-            background: linear-gradient(90deg, #00ffff, #00cccc, #ffffff);
+        
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            background: linear-gradient(90deg, var(--cyan), var(--turquesa), white);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
-            animation: titlePulse 3s infinite;
         }
-
-        .subtitle {
+        
+        .hero .subtitle {
             font-size: 1.8rem;
-            color: #00cccc;
-            margin-bottom: 2.5rem;
+            color: var(--turquesa);
+            margin-bottom: 2rem;
         }
-
-        .social-links a {
-            display: inline-block;
-            margin: 0 1.5rem;
-            padding: 1rem 2.5rem;
+        
+        .btn-tiktok {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 32px;
             background: rgba(0, 255, 255, 0.15);
-            border: 2px solid cyan;
+            border: 2px solid var(--cyan);
             border-radius: 50px;
             color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
             text-decoration: none;
-            font-size: 1.3rem;
-            transition: all 0.4s ease;
+            transition: all 0.4s;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
         }
-
-        .social-links a:hover {
-            background: cyan;
-            color: #0f0f1a;
-            box-shadow: 0 0 25px cyan;
-            transform: translateY(-8px);
+        
+        .btn-tiktok:hover {
+            background: var(--cyan);
+            color: var(--bg);
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.7);
         }
-
-        /* Sección biografía */
-        section {
+        
+        /* Sección Sobre Mí */
+        .about {
             max-width: 900px;
-            margin: 5rem auto;
+            margin: 6rem auto;
             padding: 3rem;
-            background: rgba(20, 20, 35, 0.7);
+            background: var(--card);
             border-radius: 20px;
-            border: 1px solid #00cccc;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
-            animation: fadeIn 2s;
+            border: 1px solid var(--turquesa);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
-
-        section h2 {
+        
+        .about h2 {
+            font-family: 'Orbitron', sans-serif;
             font-size: 2.8rem;
-            color: cyan;
+            color: var(--cyan);
+            text-align: center;
             margin-bottom: 2rem;
+        }
+        
+        .about p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
             text-align: center;
         }
-
-        section p {
-            font-size: 1.3rem;
-            line-height: 1.9;
-            color: #ccc;
-            margin-bottom: 1.5rem;
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
         }
-
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--cyan);
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .greeting {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--turquesa);
+            margin-top: 3rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        
         /* Animaciones */
         @keyframes glow {
-            from { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
-            to { box-shadow: 0 0 60px rgba(0, 255, 255, 1); }
+            from { box-shadow: 0 0 40px rgba(0, 255, 255, 0.5); }
+            to { box-shadow: 0 0 70px rgba(0, 255, 255, 0.9); }
         }
-
-        @keyframes titlePulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        
+        @media (max-width: 768px) {
+            .hero-img { width: 250px; height: 250px; }
+            .hero h1 { font-size: 3rem; }
+            .hero .subtitle { font-size: 1.5rem; }
+            .about { margin: 3rem 1rem; padding: 2rem; }
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Fondo de partículas -->
     <canvas id="particles"></canvas>
 
-    <header>
-        <!-- TU NUEVA IMAGEN AQUÍ -->
-        <img src="https://bananapedia.wiki.gg/images/BR_Miku.png" alt="HM Gooo Official - Hatsune Miku" class="profile-img">
-
+    <!-- Sección Hero -->
+    <section class="hero">
+        <img src="https://bananapedia.wiki.gg/images/BR_Miku.png" alt="Hatsune Miku - HM Gooo Official" class="hero-img">
+        
         <h1>HM Gooo Official</h1>
         <p class="subtitle">Fan Account dedicado a Hatsune Miku 💙</p>
+        
+        <a href="https://www.tiktok.com/@hmgooo_official" target="_blank" class="btn-tiktok">
+            🎵 TikTok Oficial
+        </a>
+    </section>
 
-        <div class="social-links">
-            <a href="https://www.tiktok.com/@hmgooo_official" target="_blank">🔗 TikTok Oficial</a>
-        </div>
-    </header>
-
-    <section>
+    <!-- Sección Sobre Mí -->
+    <section class="about">
         <h2>Sobre mí</h2>
         <p>
-            ¡Hola! Soy <strong>HM Gooo Official</strong>, un fan account dedicado a la increíble <strong>Hatsune Miku</strong> y al mundo Vocaloid. 
-            Aquí comparto edits, animaciones, memes y contenido creativo inspirado en la diva virtual turquesa más famosa del mundo. 💖🩵
+            ¡Hola! Soy <strong>HM Gooo Official</strong>, un fan account 100% dedicado a la diva virtual más icónica: <strong>Hatsune Miku</strong>.
         </p>
         <p>
-            Se les agradece por su apoyo y mi diosa Hatsune Miku también lo agradece 😊🩵<br>
-            ¡Gracias por los +483K seguidores y +31.7K likes en TikTok!
+            Comparto edits, animaciones, memes, transiciones y todo tipo de contenido creativo inspirado en Miku y el mundo Vocaloid 🩵
         </p>
         <p>
-            Si te gusta el contenido futurista, cyber y todo lo relacionado con Miku, ¡este es tu lugar! 
-            Subo videos regularmente en TikTok, así que sígueme para no perderte nada.
+            Se les agradece por su apoyo y mi diosa Hatsune Miku también lo agradece 😊🩵
         </p>
-        <p style="text-align:center; margin-top:3rem; font-size:1.8rem; color: cyan;">
-            🎄🔔 ¡Buen 2026! 🔔🎄
-        </p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">483K+</div>
+                <div class="stat-label">Seguidores</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">31.7K+</div>
+                <div class="stat-label">Me gusta totales</div>
+            </div>
+        </div>
+        
+        <p class="greeting">🎄🔔 ¡Buen 2026! 🔔🎄</p>
     </section>
 
     <!-- Partículas.js -->
@@ -170,17 +215,16 @@
     <script>
         particlesJS("particles", {
             "particles": {
-                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": ["#00ffff", "#00cccc", "#ffffff"] },
+                "number": { "value": 60 },
+                "color": { "value": ["#00ffff", "#00cccc"] },
                 "shape": { "type": "circle" },
-                "opacity": { "value": 0.6, "random": true },
+                "opacity": { "value": 0.4, "random": true },
                 "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00ffff", "opacity": 0.3, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+                "line_linked": { "enable": true, "distance": 180, "color": "#00ffff", "opacity": 0.2, "width": 1 },
+                "move": { "enable": true, "speed": 1.5 }
             },
             "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "repulse" }, "resize": true }
+                "events": { "onhover": { "enable": true, "mode": "repulse" } }
             },
             "retina_detect": true
         });
